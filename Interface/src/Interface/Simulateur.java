@@ -9,6 +9,10 @@ public class Simulateur {
 	public Simulateur(){
 	}
 	
+	public Vector<Particule> getListeparticules() {
+		return listeparticules;
+	}
+
 	public void addParticule(Particule particule){
 		listeparticules.add(particule);
 	}
