@@ -1,6 +1,8 @@
 package Interface;
 
 public class Milieu {
+	private Forme forme;
+	
 	public Milieu(){
 		
 	}
