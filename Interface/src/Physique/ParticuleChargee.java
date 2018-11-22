@@ -2,6 +2,8 @@ package Physique;
 
 import java.util.Vector;
 
+import Interface.Particule;
+
 public class ParticuleChargee extends Particule{
 	private double charge;
 	private double masse;
