@@ -68,10 +68,9 @@ class Surface extends JPanel implements ActionListener {
         
         for (Particule p : sim.getListeparticules()) {
         	Vector<Double> position = p.getPosition();
-			double x = position.get(0);
-			double y = position.get(1);
-			Line2D line = new Line2D.Double(x, y, x ,y);
-			g2d.draw(line);
+			int x = (int) Math.round(position.get(0)); // arrondi à un entier (pixel)
+			int y = (int) Math.round(position.get(1));
+			g2d.fillOval(x, y, 10, 10);
 		}
 
     }

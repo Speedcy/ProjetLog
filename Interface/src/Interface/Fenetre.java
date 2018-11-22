@@ -29,7 +29,7 @@ public class Fenetre extends JFrame {
         });
 
         setTitle("Points");
-        setSize(10, 10);
+        setSize(100, 100);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
