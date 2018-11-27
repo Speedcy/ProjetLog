@@ -11,8 +11,20 @@ public class Calculateur {
 		return Math.sqrt(Math.pow(position1.get(0)-position2.get(0), 2)+Math.pow(position1.get(1)-position2.get(1), 2));
 	}
 	
+	public static Vector<Double> vecteurDirecteur(Particule p1, Particule p2){
+		// Vecteur directeur allant de la particule 2 à la particule 1
+		Vector<Double> vecteur =new Vector<Double>(2);
+		Vector<Double> position1 = p1.getPosition();
+		Vector<Double> position2 = p2.getPosition();
+		double x = position1.get(0)-position2.get(0);
+		double y = position1.get(1)-position2.get(1);
+		vecteur.add(x);
+		vecteur.add(y);
+		return vecteur;
+	}
+	
 	public static Vector<Double> comp(Particule p1, Particule p2) {
-		// Calcul la composante
+		// Retourne la valeur du cosinus et du sinus de de l'angle allant de l'horizonatle au vecteur reliant p1 à p2
 		Vector<Double> vecteur =new Vector<Double>(2);
 		Vector<Double> position1 = p1.getPosition();
 		Vector<Double> position2 = p2.getPosition();
