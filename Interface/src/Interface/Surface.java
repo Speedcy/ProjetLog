@@ -35,6 +35,8 @@ class Surface extends JPanel implements ActionListener {
         
         return timer;
     }
+    
+    
 
     /*private void doDrawing(Graphics g) {
 
@@ -54,8 +56,8 @@ class Surface extends JPanel implements ActionListener {
             g2d.drawLine(x, y, x, y);
         }
     }*/
-    
-    private void doDrawing(Graphics g) {
+
+	private void doDrawing(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
 

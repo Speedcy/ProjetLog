@@ -18,8 +18,22 @@ public class Calculateur {
 		Vector<Double> position2 = p2.getPosition();
 		double x = position1.get(0)-position2.get(0);
 		double y = position1.get(1)-position2.get(1);
-		double cos = y/distance(p1,p2);
-		double sin = x/distance(p1,p2);
+		double d = distance(p1,p2);
+		
+		try {
+			if(d==0.0)
+				throw new Exception();
+		}
+		catch(Exception e) {
+			System.out.println("Deux particules ont les mêmes positions : calcul impossible");
+			vecteur.add(0.0);
+			vecteur.add(0.0);
+			return vecteur;
+		}
+		
+		double cos = y/d;
+		double sin = x/d;
+		
 		vecteur.add(cos);
 		vecteur.add(sin);
 		return vecteur;
