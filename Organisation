@@ -3,3 +3,12 @@ Tutoriel Java2d : http://zetcode.com/gfx/java2d/
 Tutoriel Timer : https://www.jmdoudoux.fr/java/dej/chap-planification_taches.htm
 
 Exemple Timer : https://www.journaldev.com/1050/java-timer-timertask-example
+
+Manip à faire en cas de disparition du JRE :
+
+Project > Properties > Java Build Path
+Select Libraries tab
+Select JRE System Library
+Click Edit button
+Choose an alternate JRE (jre1.8.0_20)
+Click Finish button
