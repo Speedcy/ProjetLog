@@ -18,6 +18,10 @@ public class Intersection extends Forme{
 		}
 		return true;
 	}
+	public Intersection() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	
