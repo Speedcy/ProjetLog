@@ -9,29 +9,28 @@ public class Fenetre extends JFrame {
 	// Inserer simulateur
 	private Simulateur sim;
 
-    public Fenetre(Simulateur simulateur) {
-    	
-        sim = simulateur;
-    	initUI(sim);
-    }
+	public Fenetre(Simulateur simulateur) {
 
-    private void initUI(Simulateur simu) {
+		sim = simulateur;
+		initUI(sim);
+	}
 
-        final Surface surface = new Surface(simu);
-        add(surface);
+	private void initUI(Simulateur simu) {
 
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                Timer timer = surface.getTimer();
-                System.out.println(timer);
-                timer.stop();
-            }
-        });
+		final Surface surface = new Surface(simu);
+		add(surface);
 
-        setTitle("Points");
-        setSize(100, 100);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				Timer timer = surface.getTimer();
+				timer.stop();
+			}
+		});
+
+		setTitle("Points");
+		setSize(100, 100);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 }
