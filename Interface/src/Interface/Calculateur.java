@@ -39,5 +39,18 @@ public class Calculateur {
 		vecteur.add(sin);
 		return vecteur;
 	}
+	public static double produitscalaire(Vector<Double> v1,Vector<Double> v2) {
+		return v1.get(0)*v2.get(0)+v1.get(1)*v2.get(1);
+	
+	}
+	public static Vector<Double> dif(Vector<Double> v1,Vector<Double> v2) {
+		Vector<Double> vec = new Vector<Double>(2);
+		vec.add(v1.get(0)-v2.get(0));
+		vec.add(v1.get(1)-v2.get(1));
+		
+		return vec;
+		
+	}
+	
 
 }
