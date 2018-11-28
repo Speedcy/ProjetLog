@@ -2,6 +2,8 @@ package Interface;
 
 import java.util.Vector;
 
+import Physique.ParticuleChargee;
+
 public class Particule {
 	private Vector<Double> position;
 	private Vector<Double>	vitesse;
@@ -42,7 +44,10 @@ public class Particule {
 	}
 
 	public Vector<Double> calculAcceleration(Particule p) {
-		Vector<Double> vecteur =new Vector<Double>(2);
+		System.out.println("Attention : appel à la méthode calculAcceleration de la classe Particule");
+		Vector<Double> vecteur =new Vector<Double>(4);
+		vecteur.add(0.0);
+		vecteur.add(0.0);
 		vecteur.add(0.0);
 		vecteur.add(0.0);
 		return vecteur;

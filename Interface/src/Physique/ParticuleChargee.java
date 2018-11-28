@@ -34,6 +34,7 @@ public class ParticuleChargee extends Particule {
 		double kc = 8.987 * Math.pow(10, 9); // Constante de Coulomb
 		double g = 6.674 * Math.pow(10, -11); // Constante gravitationelle
 
+		// Peut etre non nécessaire (compris dans calculAcceleration
 		try {
 			charge2 = ((ParticuleChargee) p).charge;
 			masse2 = ((ParticuleChargee) p).masse;
@@ -101,20 +102,31 @@ public class ParticuleChargee extends Particule {
 		return vect_acc;
 	}
 	
-	public Vector<Double> calculAcceleration(ParticuleChargee p) {
+	@Override
+	public Vector<Double> calculAcceleration(Particule p) {
 		// renvoie les accélérations courante/p et p/courante
+		
+		try {
+			p = ((ParticuleChargee) p);
+		} catch (Exception e) {
+			System.out.println("Particules de types différents : intérraction non prise en charge");
+		}
+		
 		 Vector<Double> force =new Vector<Double>(2);
 		 force = this.force(p);
 		 System.out.println("Force" + force);
 		 
-		 Vector<Double> acc =new Vector<Double>(2);
-		 acc = this.acceleration(p,force); // acceleration de 21
-		 System.out.println("Acc p/Courante" + acc);
+		 Vector<Double> acc21 =new Vector<Double>(2);
+		 acc21 = this.acceleration(p,force); // acceleration de p/Courante
+		 System.out.println("Acc p/Courante" + acc21);
 		 
 		 Vector<Double> acc12 =new Vector<Double>(2); 
-		 acc12 = p.acceleration(this,force);
+		 acc12 = ((ParticuleChargee) p).acceleration(this,force); // acceleration de Courante/p
 		 System.out.println("Acc Courante/p" + acc12);
 		 
+		 Vector<Double> acc =new Vector<Double>(4);
+		 acc.add(acc21.get(0));
+		 acc.add(acc21.get(1));
 		 acc.add(acc12.get(0));
 		 acc.add(acc12.get(1));
 		
