@@ -24,6 +24,7 @@ public class Fenetre extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
                 Timer timer = surface.getTimer();
+                System.out.println(timer);
                 timer.stop();
             }
         });
