@@ -42,30 +42,19 @@ public class ParticuleChargee extends Particule {
 			System.out.println("Particules de types différents : intérraction non prise en charge");
 		}
 
-		System.out.println(charge1);
-		System.out.println(charge2);
-
 		Vector<Double> vecteur = new Vector<Double>(2);
 		vecteur = Calculateur.comp(this, p); // vecteur contenant la valeur du cosinus et du sinus de l'angle
 		double distanceCarree = Math.pow(Calculateur.distance(this, p), 2);
 		double cosReduit = (vecteur.get(0)) / distanceCarree;
 		double sinReduit = (vecteur.get(1)) / distanceCarree;
 
-		System.out.println("1 = " + (Math.pow(vecteur.get(0), 2) + Math.pow(vecteur.get(1), 2)));
-
 		// Composantes de la force électrique
 		double comp_xc = -kc * charge1 * charge2 * cosReduit;
 		double comp_yc = -kc * charge1 * charge2 * sinReduit;
 
-		System.out.println("Comp_x Elec = " + comp_xc);
-		System.out.println("Comp_y Elec = " + comp_yc);
-
 		// Composantes de la force gravitationelle
 		double comp_xm = g * masse1 * masse2 * cosReduit;
 		double comp_ym = g * masse1 * masse2 * sinReduit;
-
-		System.out.println("Comp_x Grav = " + comp_xm);
-		System.out.println("Comp_y Grav = " + comp_ym);
 
 		Vector<Double> forceResultante = new Vector<Double>(2);
 		forceResultante.add(comp_xc + comp_xm);
@@ -106,29 +95,35 @@ public class ParticuleChargee extends Particule {
 	public Vector<Double> calculAcceleration(Particule p) {
 		// renvoie les accélérations courante/p et p/courante
 		
+		Vector<Double> acc =new Vector<Double>(4);
+		
 		try {
-			p = ((ParticuleChargee) p);
+			p = (ParticuleChargee) p; // Renvoie une erreur si la particule p n'est pas de type Particule Chargée
+			
+			Vector<Double> force =new Vector<Double>(2);
+			force = this.force(p);
+			System.out.println("Force" + force);
+			 
+			Vector<Double> acc21 =new Vector<Double>(2);
+			acc21 = this.acceleration(p,force); // acceleration de p/Courante
+			System.out.println("Acc p/Courante" + acc21);
+			 
+			Vector<Double> acc12 =new Vector<Double>(2); 
+			acc12 = ((ParticuleChargee) p).acceleration(this,force); // acceleration de Courante/p
+			System.out.println("Acc Courante/p" + acc12);
+			 
+			acc.add(acc21.get(0));
+			acc.add(acc21.get(1));
+			acc.add(acc12.get(0));
+			acc.add(acc12.get(1));
+			 
 		} catch (Exception e) {
 			System.out.println("Particules de types différents : intérraction non prise en charge");
+			acc.add(0.0);
+			acc.add(0.0);
+			acc.add(0.0);
+			acc.add(0.0);
 		}
-		
-		 Vector<Double> force =new Vector<Double>(2);
-		 force = this.force(p);
-		 System.out.println("Force" + force);
-		 
-		 Vector<Double> acc21 =new Vector<Double>(2);
-		 acc21 = this.acceleration(p,force); // acceleration de p/Courante
-		 System.out.println("Acc p/Courante" + acc21);
-		 
-		 Vector<Double> acc12 =new Vector<Double>(2); 
-		 acc12 = ((ParticuleChargee) p).acceleration(this,force); // acceleration de Courante/p
-		 System.out.println("Acc Courante/p" + acc12);
-		 
-		 Vector<Double> acc =new Vector<Double>(4);
-		 acc.add(acc21.get(0));
-		 acc.add(acc21.get(1));
-		 acc.add(acc12.get(0));
-		 acc.add(acc12.get(1));
 		
 		 return acc;
 	}

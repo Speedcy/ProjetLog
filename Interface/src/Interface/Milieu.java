@@ -3,9 +3,12 @@ package Interface;
 public class Milieu {
 	private Forme forme;
 	
+	public Milieu(){
+		// Si pas de milieu à gérer
+	}
+	
 	public Milieu(Forme forme){
 		this.forme=forme;
-		
 	}
 
 	@Override

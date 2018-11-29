@@ -8,16 +8,20 @@ import javax.swing.Timer;
 public class Fenetre extends JFrame {
 	// Inserer simulateur
 	private Simulateur sim;
+	private int tailleFenetrex;
+	private int tailleFenetrey;
+	private final Surface surface;
 
 	public Fenetre(Simulateur simulateur) {
-
 		sim = simulateur;
-		initUI(sim);
+		tailleFenetrex = 100;
+		tailleFenetrey = 100;
+		surface = new Surface(simulateur);
+		initUI();
 	}
 
-	private void initUI(Simulateur simu) {
+	private void initUI() {
 
-		final Surface surface = new Surface(simu);
 		add(surface);
 
 		addWindowListener(new WindowAdapter() {
@@ -29,8 +33,12 @@ public class Fenetre extends JFrame {
 		});
 
 		setTitle("Points");
-		setSize(100, 100);
+		setSize(tailleFenetrex, tailleFenetrey);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void update() {
+		surface.update();
 	}
 }

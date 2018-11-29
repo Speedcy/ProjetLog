@@ -47,12 +47,9 @@ public class Simulateur {
 			accelerationy.add(0.0);
 		}
 		
-		System.out.println("accelerationx = "+accelerationx);
-		
-		
 		for (int i = 0; i < n; i++) {
 			Particule p_i = listeparticules.get(i);
-			System.out.println("p_i = "+p_i);
+			//System.out.println(" Boucle 1 p_i = "+p_i);
 			
 			Vector<Double> previousposition = new Vector<Double>(2);
 			previousposition = p_i.getPosition();
@@ -69,28 +66,32 @@ public class Simulateur {
 			
 			p_i.setPosition(newposition); // MISE A JOUR DE LA POSITION
 
-			for (int j = i+1; j < n; i++) {
+			for (int j = i+1; j < n; j++) {
+				//System.out.println("Valeur indice j =" + j);
 				Particule p_j = listeparticules.get(j);
-				System.out.println("p_j = "+p_j);
+				//System.out.println("Boucle 2 p_j = "+p_j);
 				
 				
 				Vector<Double> acc = new Vector<Double>(4);
 				acc = p_i.calculAcceleration(p_j); // calcul des accélérations intermédiaires entre les particules i et j
+				System.out.println("");
 				System.out.println(acc);
 				accelerationx.set(i,accelerationx.get(i)+acc.get(0)); // On ajoute l'accélération de la particule i par rapport à la particule j
 				accelerationy.set(i,accelerationy.get(i)+acc.get(1));
 				accelerationx.set(j,accelerationx.get(j)+acc.get(2)); 
 				accelerationy.set(j,accelerationy.get(j)+acc.get(3));
+				System.out.println("accelerationx " +i+j+" = "+accelerationx);
+				System.out.println("accelerationy " +i+j+" = "+accelerationy);
 			}
 			
-			double newvitessex = previousvitesse.get(0) + accelerationx.get(0)*t_step/1000;
-			double newvitessey = previousvitesse.get(1) + accelerationy.get(1)*t_step/1000;
+			double newvitessex = previousvitesse.get(0) + accelerationx.get(i)*t_step/1000;
+			double newvitessey = previousvitesse.get(1) + accelerationy.get(i)*t_step/1000;
 			
 			Vector<Double> newvitesse = new Vector<Double>(2);
 			newvitesse.add(newvitessex);
 			newvitesse.add(newvitessey);
 			
-			System.out.println("Nouvelle vitesse" + newvitesse);
+			System.out.println("Nouvelle vitesse particule" + i + " = " + newvitesse);
 			
 			p_i.setVitesse(newvitesse); // MISE A JOUR DE LA VITESSE
 		}
