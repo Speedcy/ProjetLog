@@ -19,7 +19,14 @@ public class ParticuleChargee extends Particule {
 	public String toString() {
 		return super.toString() + "Masse" + masse + "Charge" + charge;
 	}
+	public Double getmasse() {
+		return this.masse;
 
+	}
+	public Double getcharge() {
+		return this.charge;
+
+	}
 	/*
 	 * @Override public double distance(Particule p) { return super.distance(p); }
 	 */

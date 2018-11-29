@@ -3,6 +3,11 @@ package Interface;
 import java.util.Vector;
 
 public class DemiPlan extends Forme{
+	@Override
+	public String toString() {
+		return "DemiPlan [point=" + point + ", vecteur=" + vecteur + "]";
+	}
+
 	private Vector<Double> point;
 	private Vector<Double> vecteur;
 	

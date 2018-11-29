@@ -51,6 +51,12 @@ public class Calculateur {
 		return vec;
 		
 	}
+	public static Vector<Double> multDblVec(double d, Vector<Double> vec){
+		Vector<Double> vecres=new Vector<Double>(2);
+		vecres.add(d*vec.get(0));
+		vecres.add(d*vec.get(1));
+		return vecres;
+	}
 	
 
 }
