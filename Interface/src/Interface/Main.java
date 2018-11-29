@@ -19,16 +19,26 @@ public class Main {
 
 		// Test sur le temps
 		int t_step = 100;
-		 Vector<Double> position1 =new Vector<Double>(2); 
-		 position1.add(50.0);
-		 position1.add(50.0); 
-		 Vector<Double> position2 =new Vector<Double>(2);
-		 position2.add(41.0); 
-		 position2.add(40.0); 
-		 Vector<Double> vitesse =new Vector<Double>(2); 
-		 vitesse.add(0.0); 
-		 vitesse.add(0.0); 
-		 ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
+		int nbparticules = 10;
+		
+		Simulateur simulateur = new Simulateur(t_step); 
+		
+		double masse = 9.1*Math.pow(10, -31);
+		double charge = -1.6*Math.pow(10,-19);
+		
+		Vector<Double> vitesse =new Vector<Double>(2); 
+		vitesse.add(0.0); 
+		vitesse.add(0.0);
+		
+		for (int i = 0; i < nbparticules; i++) {
+			Vector<Double> position =new Vector<Double>(2);
+			position.add(150+Math.random()*100);
+			position.add(150+Math.random()*100);
+			ParticuleChargee p = new ParticuleChargee(position,vitesse, charge,masse);
+			simulateur.addParticule(p);
+		}
+ 
+		 /*ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
 		 ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
 		 
 		 Vector<Double> force =new Vector<Double>(2); force = p1.force(p2);
@@ -40,12 +50,8 @@ public class Main {
 		 Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.acceleration(p1,
 		 force); System.out.println("Acc1/2Main" + acc12);
 		 
-		 System.out.println("");
-		 
-		 
-		 Simulateur simulateur = new Simulateur(t_step); 
-		 simulateur.addParticule(p1);
-		 simulateur.addParticule(p2); 
+		 System.out.println("");*/
+
 		 Milieu milieu= new Milieu();
 		 simulateur.addMilieu(milieu);
 		

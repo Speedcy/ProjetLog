@@ -26,7 +26,7 @@ public class TaskForPC extends TimerTask {
 			f.update(); // Mise à jour de l'affichage
 			// Faire doDrawing
 			// fenetre.update(); ou fenetre.surface.update()
-			Thread.sleep(s.getT_step());
+			Thread.sleep(1);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
