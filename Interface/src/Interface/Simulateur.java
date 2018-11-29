@@ -35,7 +35,7 @@ public class Simulateur {
 	
 	public void step() {
 		// Execution d'une etape de la simulation : mise à jour des positions et vitesses
-		System.out.println("Processus lancé");
+		//System.out.println("Processus lancé");
 		
 		int n = listeparticules.size();
 		
@@ -62,7 +62,7 @@ public class Simulateur {
 			newposition.add(newpositionx);
 			newposition.add(newpositiony);
 			
-			System.out.println("Nouvelle position =" + newposition);
+			//System.out.println("Nouvelle position =" + newposition);
 			
 			p_i.setPosition(newposition); // MISE A JOUR DE LA POSITION
 
@@ -74,14 +74,14 @@ public class Simulateur {
 				
 				Vector<Double> acc = new Vector<Double>(4);
 				acc = p_i.calculAcceleration(p_j); // calcul des accélérations intermédiaires entre les particules i et j
-				System.out.println("");
-				System.out.println(acc);
+				//System.out.println("");
+				//System.out.println(acc);
 				accelerationx.set(i,accelerationx.get(i)+acc.get(0)); // On ajoute l'accélération de la particule i par rapport à la particule j
 				accelerationy.set(i,accelerationy.get(i)+acc.get(1));
 				accelerationx.set(j,accelerationx.get(j)+acc.get(2)); 
 				accelerationy.set(j,accelerationy.get(j)+acc.get(3));
-				System.out.println("accelerationx " +i+j+" = "+accelerationx);
-				System.out.println("accelerationy " +i+j+" = "+accelerationy);
+				//System.out.println("accelerationx " +i+j+" = "+accelerationx);
+				//System.out.println("accelerationy " +i+j+" = "+accelerationy);
 			}
 			
 			double newvitessex = previousvitesse.get(0) + accelerationx.get(i)*t_step/1000;
@@ -91,7 +91,7 @@ public class Simulateur {
 			newvitesse.add(newvitessex);
 			newvitesse.add(newvitessey);
 			
-			System.out.println("Nouvelle vitesse particule" + i + " = " + newvitesse);
+			//System.out.println("Nouvelle vitesse particule" + i + " = " + newvitesse);
 			
 			p_i.setVitesse(newvitesse); // MISE A JOUR DE LA VITESSE
 		}

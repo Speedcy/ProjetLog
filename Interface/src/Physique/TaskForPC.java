@@ -18,19 +18,15 @@ public class TaskForPC extends TimerTask {
 
 	@Override
 	public void run() {
-		System.out.println("Debut execution tache " + new Date());
+		//System.out.println("Debut execution tache " + new Date());
 
-		try {
 
-			s.step(); // Mise à jour des positions et vitesses
-			f.update(); // Mise à jour de l'affichage
+		s.step(); // Mise à jour des positions et vitesses
+		f.update(); // Mise à jour de l'affichage
 			// Faire doDrawing
 			// fenetre.update(); ou fenetre.surface.update()
-			Thread.sleep(1);
+			//Thread.sleep(1);
 
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		System.out.println("Fin execution tache " + new Date());
+		//System.out.println("Fin execution tache " + new Date());
 	}
 }

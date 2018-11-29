@@ -18,23 +18,23 @@ public class Main {
 		
 
 		// Test sur le temps
-		int t_step = 100;
-		int nbparticules = 10;
+		int t_step = 50;
+		int nbparticules = 500;
 		
 		Simulateur simulateur = new Simulateur(t_step); 
 		
 		double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
 		
-		Vector<Double> vitesse =new Vector<Double>(2); 
+		Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
 		vitesse.add(0.0);
 		
 		for (int i = 0; i < nbparticules; i++) {
-			Vector<Double> position =new Vector<Double>(2);
-			position.add(150+Math.random()*100);
-			position.add(150+Math.random()*100);
-			ParticuleChargee p = new ParticuleChargee(position,vitesse, charge,masse);
+			Vector<Double> position = new Vector<Double>(2);
+			position.add(150 + Math.random()*100);
+			position.add(150 + Math.random()*100);
+			ParticuleChargee p = new ParticuleChargee(position, vitesse, charge, masse);
 			simulateur.addParticule(p);
 		}
  
