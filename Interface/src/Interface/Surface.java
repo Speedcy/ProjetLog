@@ -35,23 +35,6 @@ class Surface extends JPanel implements ActionListener {
 		return timer;
 	}
 
-	/*
-	 * private void doDrawing(Graphics g) {
-	 * 
-	 * Graphics2D g2d = (Graphics2D) g;
-	 * 
-	 * g2d.setPaint(Color.blue);
-	 * 
-	 * int w = getWidth(); int h = getHeight();
-	 * 
-	 * Random r = new Random();
-	 * 
-	 * for (int i = 0; i < 2000; i++) {
-	 * 
-	 * int x = Math.abs(r.nextInt()) % w; int y = Math.abs(r.nextInt()) % h;
-	 * g2d.drawLine(x, y, x, y); } }
-	 */
-
 	private void doDrawing(Graphics g) {
 
 		Graphics2D g2d = (Graphics2D) g;
@@ -67,14 +50,13 @@ class Surface extends JPanel implements ActionListener {
 			Vector<Double> position = p.getPosition();
 			int x = (int) Math.round(position.get(0)); // arrondi à un entier (pixel)
 			int y = (int) Math.round(position.get(1));
-			g2d.fillOval(x, y, 10, 10);
+			g2d.fillOval(x, y, 5, 5);
 		}
 
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
-
 		super.paintComponent(g);
 		doDrawing(g);
 	}
@@ -82,5 +64,9 @@ class Surface extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint(); // est appelé à chaque event (WindowEvent e)
+	}
+	
+	public void update() {
+		repaint();
 	}
 }
