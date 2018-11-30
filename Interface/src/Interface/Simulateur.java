@@ -35,7 +35,7 @@ public class Simulateur {
 	
 	public void step() {
 		// Execution d'une etape de la simulation : mise à jour des positions et vitesses
-		System.out.println("Processus lancé");
+		//System.out.println("Processus lancé");
 		
 		int n = listeparticules.size();
 		int N =milieux.size();

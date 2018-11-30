@@ -18,6 +18,7 @@ public class Main {
 		
 
 		// Test sur le temps
+
 		int t_step = 10;
 		int nbparticules = 50;
 		Vector<Double> vecd= new Vector<Double>(2);
@@ -72,6 +73,7 @@ public class Main {
 		g4.add(10.0);
 		g4.add(0.);
 		ChampGravite cg4= new ChampGravite(dp4,g4);
+
 		
 		Simulateur simulateur = new Simulateur(t_step); 
 		simulateur.addMilieu(cg);
@@ -82,7 +84,7 @@ public class Main {
 		double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
 		
-		Vector<Double> vitesse =new Vector<Double>(2); 
+		Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
 		vitesse.add(0.0);
 		Vector<Double> pospar0=new Vector<Double>(2);
@@ -91,10 +93,13 @@ public class Main {
 		ParticuleChargee pfixe = new ParticuleChargee(pospar0,vitesse, -10*charge,1);
 		simulateur.addParticule(pfixe);*/
 		for (int i = 0; i < nbparticules; i++) {
+
 			Vector<Double> position =new Vector<Double>(2);
 			position.add(-50+Math.random()*100);
 			position.add(-50+Math.random()*100);
 			ParticuleChargee p = new ParticuleChargee(position,vitesse, charge,masse);
+
+			
 			simulateur.addParticule(p);
 		}
 	 /* for (int i = 0; i < nbparticules; i++) {
