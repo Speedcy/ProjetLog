@@ -6,7 +6,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import Physique.TaskForPC;
-
+import Physique.ChampGravite;
 import Physique.ParticuleChargee;
 
 import java.awt.EventQueue;
@@ -18,10 +18,66 @@ public class Main {
 		
 
 		// Test sur le temps
-		int t_step = 100;
-		int nbparticules = 10;
+		int t_step = 10;
+		int nbparticules = 50;
+		Vector<Double> vecd= new Vector<Double>(2);
+		vecd.add(0.0);
+		vecd.add(1.0);
+		Vector<Double> point1= new Vector<Double>(2);
+		point1.add(0.0);
+		point1.add(100.0);
+		DemiPlan dp=new DemiPlan(point1,vecd);
+		
+		Vector<Double> g= new Vector<Double>(2);
+		g.add(0.0);
+		g.add(-1.);
+		ChampGravite cg= new ChampGravite(dp,g);
+		//deuxieme champ
+		Vector<Double> vecd2= new Vector<Double>(2);
+		vecd2.add(0.0);
+		vecd2.add(-1.0);
+		Vector<Double> point2= new Vector<Double>(2);
+		point2.add(0.0);
+		point2.add(-100.0);
+		DemiPlan dp2=new DemiPlan(point2,vecd2);
+		
+		Vector<Double> g2= new Vector<Double>(2);
+		g2.add(0.0);
+		g2.add(1.);
+		ChampGravite cg2= new ChampGravite(dp2,g2);
+		//3 eme champ
+		
+		Vector<Double> vecd3= new Vector<Double>(2);
+		vecd3.add(1.0);
+		vecd3.add(0.0);
+		Vector<Double> point3= new Vector<Double>(2);
+		point3.add(100.0);
+		point3.add(0.0);
+		DemiPlan dp3=new DemiPlan(point3,vecd3);
+		
+		Vector<Double> g3= new Vector<Double>(2);
+		g3.add(-10.0);
+		g3.add(0.);
+		ChampGravite cg3= new ChampGravite(dp3,g3);
+		//4
+		Vector<Double> vecd4= new Vector<Double>(2);
+		vecd4.add(-1.0);
+		vecd4.add(0.0);
+		Vector<Double> point4= new Vector<Double>(2);
+		point4.add(-100.0);
+		point4.add(0.0);
+		DemiPlan dp4=new DemiPlan(point4,vecd4);
+		
+		Vector<Double> g4= new Vector<Double>(2);
+		g4.add(10.0);
+		g4.add(0.);
+		ChampGravite cg4= new ChampGravite(dp4,g4);
 		
 		Simulateur simulateur = new Simulateur(t_step); 
+		simulateur.addMilieu(cg);
+		simulateur.addMilieu(cg2);
+		simulateur.addMilieu(cg3);
+		simulateur.addMilieu(cg4);
 		
 		double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
@@ -29,14 +85,25 @@ public class Main {
 		Vector<Double> vitesse =new Vector<Double>(2); 
 		vitesse.add(0.0); 
 		vitesse.add(0.0);
-		
+		Vector<Double> pospar0=new Vector<Double>(2);
+		/*pospar0.add(0.);
+		pospar0.add(0.);
+		ParticuleChargee pfixe = new ParticuleChargee(pospar0,vitesse, -10*charge,1);
+		simulateur.addParticule(pfixe);*/
 		for (int i = 0; i < nbparticules; i++) {
 			Vector<Double> position =new Vector<Double>(2);
-			position.add(150+Math.random()*100);
-			position.add(150+Math.random()*100);
+			position.add(-50+Math.random()*100);
+			position.add(-50+Math.random()*100);
 			ParticuleChargee p = new ParticuleChargee(position,vitesse, charge,masse);
 			simulateur.addParticule(p);
 		}
+	 /* for (int i = 0; i < nbparticules; i++) {
+			Vector<Double> position =new Vector<Double>(2);
+			position.add(-50+Math.random()*100);
+			position.add(-50+Math.random()*100);
+			ParticuleChargee p = new ParticuleChargee(position,vitesse, -charge,masse);
+			simulateur.addParticule(p);
+		}*/
  
 		 /*ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
 		 ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
@@ -52,8 +119,8 @@ public class Main {
 		 
 		 System.out.println("");*/
 
-		 Milieu milieu= new Milieu();
-		 simulateur.addMilieu(milieu);
+		 //Milieu milieu= new Milieu();
+		// simulateur.addMilieu(milieu);
 		
 		
 

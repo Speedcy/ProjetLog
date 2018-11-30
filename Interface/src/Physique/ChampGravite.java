@@ -13,14 +13,25 @@ public class ChampGravite extends Milieu {
 		super(forme);
 		champ=g;
 				}
-	public Vector<Double> calculAcceleration(ParticuleChargee p){
-		if(this.getForme().estDedans(p))
-			return Calculateur.multDblVec(p.getmasse(),champ);
-		// TODO Auto-generated constructor stub
+	@Override
+	public Vector<Double> calculAcceleration(Particule p){
+		System.out.println(this.getForme().estDedans(p));
+		if(this.getForme().estDedans(p)) {
+			System.out.println(p.getPosition()+"est dedans et son champ est"+champ);
+			
+			return champ;}
+		else {
 		Vector<Double> res=new Vector<Double>(2);
+		System.out.println(p.getPosition()+"out");
 		res.add(0.0);
 		res.add(0.0);
 		return res;
+		}
+	}
+	@Override
+	public String toString() {
+		return "ChampGravite [champ=" + champ + ", toString()=" + super.toString() + ", getForme()=" + getForme()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
 	
 

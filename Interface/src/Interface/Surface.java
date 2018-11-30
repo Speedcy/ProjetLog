@@ -44,13 +44,13 @@ class Surface extends JPanel implements ActionListener {
 		int w = getWidth();
 		int h = getHeight();
 
-		System.out.println(sim.getListeparticules());
+		//System.out.println(sim.getListeparticules());
 
 		for (Particule p : sim.getListeparticules()) {
 			Vector<Double> position = p.getPosition();
 			int x = (int) Math.round(position.get(0)); // arrondi à un entier (pixel)
 			int y = (int) Math.round(position.get(1));
-			g2d.fillOval(x, y, 5, 5);
+			g2d.fillOval(w/2+x, h/2-y, 5, 5);
 		}
 
 	}
