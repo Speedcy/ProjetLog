@@ -29,38 +29,6 @@ public class Main {
 		Milieu milieu= new Milieu();
 		config.getSimulateur().addMilieu(milieu);
 
-		Vector<Double> vitesse = new Vector<Double>(2); 
-		vitesse.add(0.0); 
-		vitesse.add(0.0);
-		
-		Vector<Double> position1 = new Vector<Double>(2); 
-		position1.add(60.0); 
-		position1.add(50.0);
-		
-		Vector<Double> position2 = new Vector<Double>(2); 
-		position2.add(50.0); 
-		position2.add(50.0);
-		
-		ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
-		ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, -1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
-		
-		config.ajoutUnitaire(p1);
-		config.ajoutUnitaire(p2);
-		
-		System.out.println(p1.getPosition());
-		System.out.println(p2.getPosition());
-		
-		Vector<Double> force =new Vector<Double>(2); 
-		force = p1.force(p2);
-		System.out.println("ForceMain" + force);
-		 
-		Vector<Double> acc21 =new Vector<Double>(2); acc21 = p1.acceleration(p2,
-		force); System.out.println("Acc2/1Main" + acc21);
-		
-		Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.acceleration(p1,
-		force); System.out.println("Acc1/2Main" + acc12);
-		 
-		System.out.println("");
 		
 		/*
 		Vector<Double> vitesse = new Vector<Double>(2); 
