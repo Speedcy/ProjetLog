@@ -27,9 +27,6 @@ public class ParticuleChargee extends Particule {
 		return this.charge;
 
 	}
-	/*
-	 * @Override public double distance(Particule p) { return super.distance(p); }
-	 */
 
 	public Vector<Double> force(Particule p) {
 		// NE PREND EN COMPTE QUE L'INTERRACTION ELEC POUR L'INSTANT
@@ -56,16 +53,16 @@ public class ParticuleChargee extends Particule {
 		double sinReduit = (vecteur.get(1)) / distanceCarree;
 
 		// Composantes de la force électrique
-		double comp_xc = -kc * charge1 * charge2 * cosReduit;
-		double comp_yc = -kc * charge1 * charge2 * sinReduit;
+		double comp_xc = kc * charge1 * charge2 * cosReduit;
+		double comp_yc = kc * charge1 * charge2 * sinReduit;
 
 		// Composantes de la force gravitationelle
-		double comp_xm = g * masse1 * masse2 * cosReduit;
-		double comp_ym = g * masse1 * masse2 * sinReduit;
+		double comp_xm = -g * masse1 * masse2 * cosReduit;
+		double comp_ym = -g * masse1 * masse2 * sinReduit;
 
 		Vector<Double> forceResultante = new Vector<Double>(2);
-		forceResultante.add(comp_xc + comp_xm);
-		forceResultante.add(comp_yc + comp_ym);
+		forceResultante.add(Math.abs(comp_xc + comp_xm));
+		forceResultante.add(Math.abs(comp_yc + comp_ym));
 		return forceResultante;
 	}
 
@@ -109,15 +106,15 @@ public class ParticuleChargee extends Particule {
 			
 			Vector<Double> force =new Vector<Double>(2);
 			force = this.force(p);
-			//System.out.println("Force" + force);
+			System.out.println("Force" + force);
 			 
 			Vector<Double> acc21 =new Vector<Double>(2);
 			acc21 = this.acceleration(p,force); // acceleration de p/Courante
-			//System.out.println("Acc p/Courante" + acc21);
+			System.out.println("Acc p/Courante" + acc21);
 			 
 			Vector<Double> acc12 =new Vector<Double>(2); 
 			acc12 = ((ParticuleChargee) p).acceleration(this,force); // acceleration de Courante/p
-			//System.out.println("Acc Courante/p" + acc12);
+			System.out.println("Acc Courante/p" + acc12);
 			 
 			acc.add(acc21.get(0));
 			acc.add(acc21.get(1));
