@@ -19,6 +19,14 @@ public class Fenetre extends JFrame {
 		surface = new Surface(simulateur);
 		initUI();
 	}
+	
+	public Fenetre(Simulateur simulateur, int tx, int ty) {
+		sim = simulateur;
+		tailleFenetrex = tx;
+		tailleFenetrey = ty;
+		surface = new Surface(simulateur);
+		initUI();
+	}
 
 	private void initUI() {
 
