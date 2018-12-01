@@ -79,9 +79,9 @@ public class Simulateur {
 			Vector<Double> newposition = new Vector<Double>(2);
 			newposition.add(newpositionx);
 			newposition.add(newpositiony);
-			System.out.println(newpositiony );
+			//System.out.println(newpositiony );
 			
-			//System.out.println("Nouvelle position =" + newposition);
+			System.out.println("particule"+i+"Nouvelle position =" + newposition);
 			
 			p_i.setPosition(newposition); // MISE A JOUR DE LA POSITION
 
