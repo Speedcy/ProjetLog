@@ -6,7 +6,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import Physique.TaskForPC;
-import Physique.Config;
+
 import Physique.ParticuleChargee;
 
 import java.awt.EventQueue;
@@ -18,51 +18,14 @@ public class Main {
 		
 
 		// Test sur le temps
+		int t_step = 50;
+		int nbparticules = 500;
+		
+		Simulateur simulateur = new Simulateur(t_step); 
 		
 		double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
 		
-		
-		Config config = new Config(50, 500, 500);
-		//config.ajoutParticules(5000, charge, masse); // ajout de particules à vitesse initiale nulle
-		
-		Milieu milieu= new Milieu();
-		config.getSimulateur().addMilieu(milieu);
-
-		Vector<Double> vitesse = new Vector<Double>(2); 
-		vitesse.add(0.0); 
-		vitesse.add(0.0);
-		
-		Vector<Double> position1 = new Vector<Double>(2); 
-		position1.add(60.0); 
-		position1.add(50.0);
-		
-		Vector<Double> position2 = new Vector<Double>(2); 
-		position2.add(50.0); 
-		position2.add(50.0);
-		
-		ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
-		ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, -1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
-		
-		config.ajoutUnitaire(p1);
-		config.ajoutUnitaire(p2);
-		
-		System.out.println(p1.getPosition());
-		System.out.println(p2.getPosition());
-		
-		Vector<Double> force =new Vector<Double>(2); 
-		force = p1.force(p2);
-		System.out.println("ForceMain" + force);
-		 
-		Vector<Double> acc21 =new Vector<Double>(2); acc21 = p1.acceleration(p2,
-		force); System.out.println("Acc2/1Main" + acc21);
-		
-		Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.acceleration(p1,
-		force); System.out.println("Acc1/2Main" + acc12);
-		 
-		System.out.println("");
-		
-		/*
 		Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
 		vitesse.add(0.0);
@@ -73,8 +36,55 @@ public class Main {
 			position.add(150 + Math.random()*100);
 			ParticuleChargee p = new ParticuleChargee(position, vitesse, charge, masse);
 			simulateur.addParticule(p);
-		}*/
+		}
+ 
+		 /*ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
+		 ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
+		 
+		 Vector<Double> force =new Vector<Double>(2); force = p1.force(p2);
+		 System.out.println("ForceMain" + force);
+		 
+		 Vector<Double> acc21 =new Vector<Double>(2); acc21 = p1.acceleration(p2,
+		 force); System.out.println("Acc2/1Main" + acc21);
+		 
+		 Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.acceleration(p1,
+		 force); System.out.println("Acc1/2Main" + acc12);
+		 
+		 System.out.println("");*/
+
+		 Milieu milieu= new Milieu();
+		 simulateur.addMilieu(milieu);
 		
+		
+
+		// Création ParticuleChargee
+
+		/*
+		int t_step = 100;
+		 Vector<Double> position1 =new Vector<Double>(2); 
+		 position1.add(50.0);
+		 position1.add(50.0); 
+		 Vector<Double> position2 =new Vector<Double>(2);
+		 position2.add(41.0); 
+		 position2.add(40.0); Vector<Double> vitesse =new Vector<Double>(2); 
+		 vitesse.add(2.0); vitesse.add(0.0); ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -1));
+		 ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10, -19),9.1*Math.pow(10,-1));
+		 
+		 Vector<Double> force =new Vector<Double>(2); force = p1.force(p2);
+		 System.out.println("Force" + force);
+		 
+		 Vector<Double> acc21 =new Vector<Double>(2); acc21 = p1.acceleration(p2,
+		 force); System.out.println("Acc2/1" + acc21);
+		 
+		 Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.acceleration(p1,
+		 force); System.out.println("Acc1/2" + acc12);
+		 
+		 
+		 Simulateur simulateur = new Simulateur(t_step); 
+		 simulateur.addParticule(p1);
+		 simulateur.addParticule(p2); Milieu milieu= new Milieu();
+		 simulateur.addMilieu(milieu);
+		 */
 		 
 		// Création Particule, Milieu, Simulateur
 
@@ -96,10 +106,10 @@ public class Main {
 		 EventQueue.invokeLater(new Runnable() {
 		 
 		 @Override public void run() { 
-			 Fenetre fenetre = new Fenetre(config.getSimulateur(),config.getTaillefenetrex(),config.getTaillefenetrey());
+			 Fenetre fenetre = new Fenetre(simulateur);
 			 fenetre.setVisible(true);
 			 // start sim (fenetre)
-			 startSimulation(config.getSimulateur(), fenetre, config.getT_step());
+			 startSimulation(simulateur, fenetre, t_step);
 		 }
 		 });
 		 

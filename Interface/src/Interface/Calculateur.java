@@ -18,8 +18,8 @@ public class Calculateur {
 		Vector<Double> vecteur = new Vector<Double>(2);
 		Vector<Double> position1 = p1.getPosition();
 		Vector<Double> position2 = p2.getPosition();
-		double x = position2.get(0) - position1.get(0);
-		double y = position2.get(1) - position1.get(1);
+		double x = position1.get(0) - position2.get(0);
+		double y = position1.get(1) - position2.get(1);
 		double d = distance(p1, p2);
 
 		try {
@@ -32,8 +32,8 @@ public class Calculateur {
 			return vecteur;
 		}
 
-		double cos = x / d;
-		double sin = y / d;
+		double cos = y / d;
+		double sin = x / d;
 
 		vecteur.add(cos);
 		vecteur.add(sin);
