@@ -49,7 +49,13 @@ public class Calculateur {
 		vec.add(v1.get(1)-v2.get(1));
 		
 		return vec;
-		
+	}
+		public static Vector<Double> somme(Vector<Double> v1,Vector<Double> v2) {
+			Vector<Double> vec = new Vector<Double>(2);
+			vec.add(v1.get(0)+v2.get(0));
+			vec.add(v1.get(1)+v2.get(1));
+			
+			return vec;	
 	}
 	public static Vector<Double> multDblVec(double d, Vector<Double> vec){
 		Vector<Double> vecres=new Vector<Double>(2);

@@ -5,6 +5,7 @@ import java.util.Vector;
 import Interface.Calculateur;
 import Interface.Forme;
 import Interface.Milieu;
+import Interface.Particule;
 
 public class ChampElec extends Milieu {
 	private Vector<Double> E;
@@ -13,9 +14,10 @@ public class ChampElec extends Milieu {
 		super(forme);
 		this.E=E;}
 		
-	public Vector<Double> calculAcceleration(ParticuleChargee p) {
+	@Override
+	public Vector<Double> calculAcceleration(Particule p) {
 			if(this.getForme().estDedans(p))
-				return Calculateur.multDblVec(p.getcharge()/p.getmasse(),E) ;
+				return Calculateur.multDblVec(((ParticuleChargee) p).getcharge()/((ParticuleChargee) p).getmasse(),E) ;
 			// TODO Auto-generated constructor stub
 			Vector<Double> res=new Vector<Double>(2);
 			res.add(0.0);

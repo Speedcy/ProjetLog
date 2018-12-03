@@ -1,5 +1,9 @@
 package Interface;
 
+import java.util.Vector;
+
+import Physique.ParticuleChargee;
+
 public class Milieu {
 	private Forme forme;
 	
@@ -22,6 +26,12 @@ public class Milieu {
 
 	public void setForme(Forme forme) {
 		this.forme = forme;
+	}
+	public Vector<Double> calculAcceleration(Particule p) {
+		Vector<Double> res= new Vector<Double>(2);
+		res.add(0.0);
+		res.add(0.0);
+		return res;
 	}
 
 }

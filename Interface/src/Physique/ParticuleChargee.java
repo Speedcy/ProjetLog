@@ -43,7 +43,7 @@ public class ParticuleChargee extends Particule {
 			charge2 = ((ParticuleChargee) p).charge;
 			masse2 = ((ParticuleChargee) p).masse;
 		} catch (Exception e) {
-			System.out.println("Particules de types différents : intérraction non prise en charge");
+			//System.out.println("Particules de types différents : intérraction non prise en charge");
 		}
 
 		Vector<Double> vecteur = new Vector<Double>(2);

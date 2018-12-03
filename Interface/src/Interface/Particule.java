@@ -1,5 +1,6 @@
 package Interface;
 
+import java.awt.Color;
 import java.util.Vector;
 
 import Physique.ParticuleChargee;
@@ -7,10 +8,19 @@ import Physique.ParticuleChargee;
 public class Particule {
 	private Vector<Double> position;
 	private Vector<Double>	vitesse;
-	
+	public Color color = Color.blue;
 	public Particule(Vector<Double> p, Vector<Double> v){
 		position=p;
 		vitesse=v;
+		
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
 
 	@Override
