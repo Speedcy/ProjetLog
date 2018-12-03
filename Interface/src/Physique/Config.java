@@ -1,5 +1,6 @@
 package Physique;
 
+import java.awt.Color;
 import java.util.Vector;
 
 import Interface.Simulateur;
@@ -26,10 +27,18 @@ public class Config {
 		
 		for (int i = 0; i < nbparticules; i++) {
 			Vector<Double> position = new Vector<Double>(2);
-			position.add(taillefenetrex*5/12 + Math.random()*taillefenetrex*2/12);
-			position.add(taillefenetrey*5/12 + Math.random()*taillefenetrey*2/12);
-			ParticuleChargee p = new ParticuleChargee(position, vitesse, charge, masse);
+			position.add(Math.random()*taillefenetrex/5-taillefenetrex/10);
+			position.add(Math.random()*taillefenetrey/5-taillefenetrey/10);
+			double signealeatoire;
+			if (Math.random()<0.5)
+				signealeatoire = 1.0;
+			else
+				signealeatoire = -1.0;
+			System.out.println(signealeatoire);
+			ParticuleChargee p = new ParticuleChargee(position, vitesse, signealeatoire*charge, masse);
 			simulateur.addParticule(p);
+			if (signealeatoire<0)
+				p.setColor(Color.red);
 		}
 	}
 	

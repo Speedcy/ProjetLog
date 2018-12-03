@@ -106,15 +106,15 @@ public class ParticuleChargee extends Particule {
 			
 			Vector<Double> force =new Vector<Double>(2);
 			force = this.force(p);
-			System.out.println("Force" + force);
+			//System.out.println("Force" + force);
 			 
 			Vector<Double> acc21 =new Vector<Double>(2);
 			acc21 = this.acceleration(p,force); // acceleration de p/Courante
-			System.out.println("Acc p/Courante" + acc21);
+			//System.out.println("Acc p/Courante" + acc21);
 			 
 			Vector<Double> acc12 =new Vector<Double>(2); 
 			acc12 = ((ParticuleChargee) p).acceleration(this,force); // acceleration de Courante/p
-			System.out.println("Acc Courante/p" + acc12);
+			//System.out.println("Acc Courante/p" + acc12);
 			 
 			acc.add(acc21.get(0));
 			acc.add(acc21.get(1));

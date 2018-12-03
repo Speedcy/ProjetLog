@@ -47,7 +47,7 @@ public class Simulateur {
 			Particule p_i = listeparticules.get(i);
 			accelerationx.add(0.0);
 			accelerationy.add(0.0);
-			System.out.println("la particule"+i);
+			//System.out.println("la particule"+i);
 			double accMx=0.0;
 			double accMy=0.0;
 			for(Milieu m: milieux) {
@@ -81,7 +81,7 @@ public class Simulateur {
 			newposition.add(newpositiony);
 			//System.out.println(newpositiony );
 			
-			System.out.println("particule"+i+"Nouvelle position =" + newposition);
+			//System.out.println("particule"+i+"Nouvelle position =" + newposition);
 			
 			p_i.setPosition(newposition); // MISE A JOUR DE LA POSITION
 
@@ -93,14 +93,14 @@ public class Simulateur {
 				
 				Vector<Double> acc = new Vector<Double>(4);
 				acc = p_i.calculAcceleration(p_j); // calcul des accélérations intermédiaires entre les particules i et j
-				System.out.println("");
-				System.out.println(acc);
+				//System.out.println("");
+				//System.out.println(acc);
 				accelerationx.set(i,accelerationx.get(i)+acc.get(0)); // On ajoute l'accélération de la particule i par rapport à la particule j
 				accelerationy.set(i,accelerationy.get(i)+acc.get(1));
 				accelerationx.set(j,accelerationx.get(j)+acc.get(2)); 
 				accelerationy.set(j,accelerationy.get(j)+acc.get(3));
-				System.out.println("accelerationx " +i+j+" = "+accelerationx);
-				System.out.println("accelerationy " +i+j+" = "+accelerationy);
+				//System.out.println("accelerationx " +i+j+" = "+accelerationx);
+				//System.out.println("accelerationy " +i+j+" = "+accelerationy);
 			}
 			
 			double newvitessex = previousvitesse.get(0) + accelerationx.get(i)*t_step/100;
