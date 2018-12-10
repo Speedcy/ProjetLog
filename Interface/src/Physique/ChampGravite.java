@@ -15,14 +15,14 @@ public class ChampGravite extends Milieu {
 				}
 	@Override
 	public Vector<Double> calculAcceleration(Particule p){
-		System.out.println(this.getForme().estDedans(p));
+		//System.out.println(this.getForme().estDedans(p));
 		if(this.getForme().estDedans(p)) {
-			System.out.println(p.getPosition()+"est dedans et son champ est"+champ);
+			//System.out.println(p.getPosition()+"est dedans et son champ est"+champ);
 			
 			return champ;}
 		else {
 		Vector<Double> res=new Vector<Double>(2);
-		System.out.println(p.getPosition()+"out");
+		//System.out.println(p.getPosition()+"out");
 		res.add(0.0);
 		res.add(0.0);
 		return res;

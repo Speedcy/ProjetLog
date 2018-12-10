@@ -25,18 +25,18 @@ public class Main {
 		double charge = -1.6*Math.pow(10,-19);
 				
 		Config config = new Config(50, 500, 500);
-		config.ajoutParticules(100, charge, masse); // ajout de particules à vitesse initiale nulle
+		config.ajoutParticules(500, charge, masse); // ajout de particules à vitesse initiale nulle et de signes alétoires
 		
 		Milieu milieu= new Milieu();
-		config.getSimulateur().addMilieu(milieu);
 
 		/*Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
 		vitesse.add(0.0);
-		*/
-		/*
+		
 		int t_step = 10;
 		int nbparticules = 10;
+		*/
+		
 		Vector<Double> vecd= new Vector<Double>(2);
 		vecd.add(0.0);
 		vecd.add(1.0);
@@ -91,13 +91,11 @@ public class Main {
 		ChampGravite cg4= new ChampGravite(dp4,g4);
 
 		
-		Simulateur simulateur = new Simulateur(t_step); 
-		simulateur.addMilieu(cg);
-		simulateur.addMilieu(cg2);
-		simulateur.addMilieu(cg3);
-		simulateur.addMilieu(cg4);
-		
-		*/
+		//Simulateur simulateur = new Simulateur(t_step); 
+		config.getSimulateur().addMilieu(cg);
+		config.getSimulateur().addMilieu(cg2);
+		config.getSimulateur().addMilieu(cg3);
+		config.getSimulateur().addMilieu(cg4);
 
 		
 		/*

@@ -1,6 +1,7 @@
 package Interface;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.util.Vector;
 
 import Physique.ParticuleChargee;
@@ -61,6 +62,13 @@ public class Particule {
 		vecteur.add(0.0);
 		vecteur.add(0.0);
 		return vecteur;
+	}
+	
+	public void draw(Graphics2D g2d, int w, int h) {
+		g2d.setPaint(color);
+		int x = (int) Math.round(position.get(0)); // arrondi à un entier (pixel)
+		int y = (int) Math.round(position.get(1));
+		g2d.fillOval(w/2+x, h/2-y, 5, 5);
 	}
 
 }

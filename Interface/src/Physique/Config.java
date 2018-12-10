@@ -34,7 +34,7 @@ public class Config {
 				signealeatoire = 1.0;
 			else
 				signealeatoire = -1.0;
-			System.out.println(signealeatoire);
+			//System.out.println(signealeatoire);
 			ParticuleChargee p = new ParticuleChargee(position, vitesse, signealeatoire*charge, masse);
 			simulateur.addParticule(p);
 			if (signealeatoire<0)
