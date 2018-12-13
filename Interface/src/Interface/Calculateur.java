@@ -35,8 +35,8 @@ public class Calculateur {
 		double cos = x / d;
 		double sin = y / d;
 
-		vecteur.add(cos);
-		vecteur.add(sin);
+		vecteur.add(Math.abs(cos));
+		vecteur.add(Math.abs(sin));
 		return vecteur;
 	}
 	public static double produitscalaire(Vector<Double> v1,Vector<Double> v2) {

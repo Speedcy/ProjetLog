@@ -43,6 +43,11 @@ class Surface extends JPanel implements ActionListener {
 		int h = getHeight();
 
 		//System.out.println(sim.getListeparticules());
+		
+		
+		for (Milieu m : sim.getMilieux()) {
+			m.draw(g2d);
+		}
 
 		for (Particule p : sim.getListeparticules()) {
 			p.draw(g2d, w, h);

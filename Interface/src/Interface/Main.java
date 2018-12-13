@@ -27,7 +27,26 @@ public class Main {
 		Config config = new Config(50, 500, 500);
 		config.ajoutParticules(500, charge, masse); // ajout de particules à vitesse initiale nulle et de signes alétoires
 		
-		Milieu milieu= new Milieu();
+		/*Vector<Double> vitesse = new Vector<Double>(2); 
+		vitesse.add(0.0);
+		vitesse.add(0.0);
+		
+		Vector<Double> position1 = new Vector<Double>(2); 
+		position1.add(Math.random()*100); 
+		position1.add(Math.random()*100);
+		
+		Vector<Double> position2 = new Vector<Double>(2); 
+		position2.add(Math.random()*100); 
+		position2.add(Math.random()*100);
+		
+		 ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, 12));
+		 ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, 12));
+		 p2.setColor(Color.red);
+		 
+		 config.ajoutUnitaire(p1);
+		 config.ajoutUnitaire(p2);*/
+		 
+		//Milieu milieu= new Milieu();
 
 		/*Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
@@ -36,6 +55,8 @@ public class Main {
 		int t_step = 10;
 		int nbparticules = 10;
 		*/
+		
+		
 		
 		Vector<Double> vecd= new Vector<Double>(2);
 		vecd.add(0.0);
@@ -96,6 +117,7 @@ public class Main {
 		config.getSimulateur().addMilieu(cg2);
 		config.getSimulateur().addMilieu(cg3);
 		config.getSimulateur().addMilieu(cg4);
+		
 
 		
 		/*
@@ -115,24 +137,42 @@ public class Main {
 			p.setColor(Color.red);
 		}
 		*/
+		
+		
  
-		 /*ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
+		/*
+		Vector<Double> vitesse = new Vector<Double>(2); 
+		vitesse.add(0.0); 
+		vitesse.add(0.0);
+		
+		Vector<Double> position1 = new Vector<Double>(2); 
+		vitesse.add(40.0); 
+		vitesse.add(40.0);
+		
+		Vector<Double> position2 = new Vector<Double>(2); 
+		vitesse.add(50.0); 
+		vitesse.add(50.0);
+		
+		 ParticuleChargee p1 = new ParticuleChargee(position1,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
 		 ParticuleChargee p2 = new ParticuleChargee(position2,vitesse, 1.6*Math.pow(10,-19),9.1*Math.pow(10, -31));
 		 
-		 Vector<Double> force =new Vector<Double>(2); force = p1.force(p2);
-		 System.out.println("ForceMain" + force);
+		 config.ajoutUnitaire(p1);
+		 config.ajoutUnitaire(p2);
 		 
-		 Vector<Double> acc21 =new Vector<Double>(2); acc21 = p1.acceleration(p2,
-		 force); System.out.println("Acc2/1Main" + acc21);
+		 //Vector<Double> force =new Vector<Double>(2); force = p1.force(p2);
+		 //System.out.println("ForceMain" + force);
 		 
-		 Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.acceleration(p1,
-		 force); System.out.println("Acc1/2Main" + acc12);
+		 Vector<Double> acc21 =new Vector<Double>(2); acc21 = p1.calculAcceleration(p2);
+		 System.out.println("Acc2/1Main" + acc21);
 		 
-		 System.out.println("");*/
+		 Vector<Double> acc12 =new Vector<Double>(2); acc12 = p2.calculAcceleration(p1); 
+		 System.out.println("Acc1/2Main" + acc12);
+		 
+		 System.out.println("");
+		 */
 
 		 //Milieu milieu= new Milieu();
-		// simulateur.addMilieu(milieu);
-		
+		 
 		 
 		// Création Particule, Milieu, Simulateur
 

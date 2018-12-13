@@ -16,6 +16,10 @@ public class Simulateur {
 		return listeparticules;
 	}
 
+	public Vector<Milieu> getMilieux() {
+		return milieux;
+	}
+
 	public void addParticule(Particule particule) {
 		listeparticules.add(particule);
 	}

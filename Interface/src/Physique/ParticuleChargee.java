@@ -61,8 +61,8 @@ public class ParticuleChargee extends Particule {
 		double comp_ym = -g * masse1 * masse2 * sinReduit;
 
 		Vector<Double> forceResultante = new Vector<Double>(2);
-		forceResultante.add(Math.abs(comp_xc + comp_xm));
-		forceResultante.add(Math.abs(comp_yc + comp_ym));
+		forceResultante.add(comp_xc + comp_xm);
+		forceResultante.add(comp_yc + comp_ym);
 		return forceResultante;
 	}
 
@@ -83,14 +83,14 @@ public class ParticuleChargee extends Particule {
 		Vector<Double> vect_acc = new Vector<Double>(2);
 
 		if (p1x < p2x)
-			vect_acc.add(force.get(0) / m);
-		else
 			vect_acc.add(-force.get(0) / m);
+		else
+			vect_acc.add(force.get(0) / m);
 
 		if (p1y < p2y)
-			vect_acc.add(force.get(1) / m);
-		else
 			vect_acc.add(-force.get(1) / m);
+		else
+			vect_acc.add(force.get(1) / m);
 
 		return vect_acc;
 	}

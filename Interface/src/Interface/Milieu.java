@@ -1,5 +1,8 @@
 package Interface;
 
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.util.Vector;
 
 import Physique.ParticuleChargee;
@@ -32,6 +35,18 @@ public class Milieu {
 		res.add(0.0);
 		res.add(0.0);
 		return res;
+	}
+	
+	public void draw(Graphics2D g2d) {
+		g2d.setPaint(Color.green);
+		float alpha = 0.1f;
+        AlphaComposite alcom = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);
+        g2d.setComposite(alcom);
+		int[] x = {0,100,100,0};
+		int[] y = {0, 0, 100, 100};
+		g2d.fillPolygon(x, y, 4);
+		alcom = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f);
+        g2d.setComposite(alcom);
 	}
 
 }
