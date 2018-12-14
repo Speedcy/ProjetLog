@@ -25,15 +25,17 @@ public class Main {
 		double charge = -1.6*Math.pow(10,-19);
 				
 		Config config = new Config(50, 500, 500);
-		config.ajoutParticules(500, charge, masse); // ajout de particules à vitesse initiale nulle et de signes alétoires
+		config.ajoutParticules(10, charge, masse); // ajout de particules à vitesse initiale nulle et de signes alétoires
+		
+		config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);
 		
 		/*Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0);
 		vitesse.add(0.0);
 		
 		Vector<Double> position1 = new Vector<Double>(2); 
-		position1.add(Math.random()*100); 
-		position1.add(Math.random()*100);
+		position1.add(0.); 
+		position1.add(200.);
 		
 		Vector<Double> position2 = new Vector<Double>(2); 
 		position2.add(Math.random()*100); 
@@ -57,9 +59,9 @@ public class Main {
 		*/
 		
 		
-		
+		/*
 		Vector<Double> vecd= new Vector<Double>(2);
-		vecd.add(0.0);
+		vecd.add(1.0);
 		vecd.add(1.0);
 		Vector<Double> point1= new Vector<Double>(2);
 		point1.add(0.0);
@@ -68,12 +70,12 @@ public class Main {
 		
 		Vector<Double> g= new Vector<Double>(2);
 		g.add(0.0);
-		g.add(-1.0);
+		g.add(-5.0);
 		ChampGravite cg= new ChampGravite(dp,g);
 		//deuxieme champ
 		Vector<Double> vecd2= new Vector<Double>(2);
 		vecd2.add(0.0);
-		vecd2.add(-0.1);
+		vecd2.add(-1.0);
 		Vector<Double> point2= new Vector<Double>(2);
 		point2.add(0.0);
 		point2.add(-200.0);
@@ -81,7 +83,7 @@ public class Main {
 		
 		Vector<Double> g2= new Vector<Double>(2);
 		g2.add(0.0);
-		g2.add(1.0);
+		g2.add(5.0);
 		ChampGravite cg2= new ChampGravite(dp2,g2);
 		//3 eme champ
 		
@@ -94,7 +96,7 @@ public class Main {
 		DemiPlan dp3=new DemiPlan(point3,vecd3);
 		
 		Vector<Double> g3= new Vector<Double>(2);
-		g3.add(-1.0);
+		g3.add(-5.0);
 		g3.add(0.);
 		ChampGravite cg3= new ChampGravite(dp3,g3);
 		//4
@@ -107,7 +109,7 @@ public class Main {
 		DemiPlan dp4=new DemiPlan(point4,vecd4);
 		
 		Vector<Double> g4= new Vector<Double>(2);
-		g4.add(1.0);
+		g4.add(5.0);
 		g4.add(0.);
 		ChampGravite cg4= new ChampGravite(dp4,g4);
 
@@ -117,7 +119,7 @@ public class Main {
 		config.getSimulateur().addMilieu(cg2);
 		config.getSimulateur().addMilieu(cg3);
 		config.getSimulateur().addMilieu(cg4);
-		
+		*/
 
 		
 		/*

@@ -21,6 +21,7 @@ public class TaskForPC extends TimerTask {
 		//System.out.println("Debut execution tache " + new Date());
 
 
+		
 		s.step(); // Mise à jour des positions et vitesses
 		f.update(); // Mise à jour de l'affichage
 			// Faire doDrawing
