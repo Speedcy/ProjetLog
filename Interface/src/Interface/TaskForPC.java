@@ -1,10 +1,7 @@
-package Physique;
+package Interface;
 
 import java.util.Date;
 import java.util.TimerTask;
-
-import Interface.Fenetre;
-import Interface.Simulateur;
 
 public class TaskForPC extends TimerTask {
 	// Mettre a jour la position et la vitesse

@@ -42,6 +42,7 @@ public class Config {
 		}
 	}
 	
+	
 	public void ajoutUnitaire(Vector<Double> position, Vector<Double> vitesse, double charge, double masse) {
 		ParticuleChargee p = new ParticuleChargee(position, vitesse, charge, masse);
 		simulateur.addParticule(p);
