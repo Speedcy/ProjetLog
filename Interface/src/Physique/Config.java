@@ -3,6 +3,7 @@ package Physique;
 import java.awt.Color;
 import java.util.Vector;
 
+import Interface.DemiPlan;
 import Interface.Simulateur;
 
 public class Config {
@@ -50,6 +51,38 @@ public class Config {
 	
 	public void ajoutUnitaire(ParticuleChargee p) {
 		simulateur.addParticule(p);
+	}
+	
+	public void ajoutChampGravite(double x_point, double y_point, double x_vect, double y_vect, double x_champ, double y_champ) {
+		Vector<Double> point= new Vector<Double>(2);
+		point.add(x_point);
+		point.add(y_point);
+		Vector<Double> vec= new Vector<Double>(2);
+		vec.add(x_vect);
+		vec.add(y_vect);
+		DemiPlan dp=new DemiPlan(point,vec);
+		
+		Vector<Double> g= new Vector<Double>(2);
+		g.add(x_champ);
+		g.add(y_champ);
+		ChampGravite cg= new ChampGravite(dp,g);
+		simulateur.addMilieu(cg);
+	}
+	
+	public void ajoutChampElec(double x_point, double y_point, double x_vect, double y_vect, double x_champ, double y_champ) {
+		Vector<Double> point= new Vector<Double>(2);
+		point.add(x_point);
+		point.add(y_point);
+		Vector<Double> vec= new Vector<Double>(2);
+		vec.add(x_vect);
+		vec.add(y_vect);
+		DemiPlan dp=new DemiPlan(point,vec);
+		
+		Vector<Double> e= new Vector<Double>(2);
+		e.add(x_champ);
+		e.add(y_champ);
+		ChampElec ce= new ChampElec(dp,e);
+		simulateur.addMilieu(ce);
 	}
 
 	public int getTaillefenetrex() {

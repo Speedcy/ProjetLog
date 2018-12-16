@@ -37,16 +37,8 @@ public class Milieu {
 		return res;
 	}
 	
-	public void draw(Graphics2D g2d) {
-		g2d.setPaint(Color.green);
-		float alpha = 0.1f;
-        AlphaComposite alcom = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);
-        g2d.setComposite(alcom);
-		int[] x = {0,100,100,0};
-		int[] y = {0, 0, 100, 100};
-		g2d.fillPolygon(x, y, 4);
-		alcom = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f);
-        g2d.setComposite(alcom);
+	public void draw(Graphics2D g2d, int w, int h) {
+		forme.draw(g2d, w, h);
 	}
 
 }
