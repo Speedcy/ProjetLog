@@ -35,7 +35,7 @@ public class DemiPlan extends Forme{
         int x_point = (int) Math.round(this.point.get(0));
         int y_point = (int) Math.round(this.point.get(1));
         int x_vect = (int) (Math.round(this.vecteur.get(0)*10*w));
-        int y_vect = (int) (Math.round(this.vecteur.get(1)*10*h));
+        int y_vect = (int) (Math.round(this.vecteur.get(1)*10*w));
         int x_par = -y_vect;
         int y_par = x_vect;
 		//int[] x = {x_point+x_par, x_point+x_par,x_point+x_vect,x_point+x_vect};
@@ -46,8 +46,8 @@ public class DemiPlan extends Forme{
         //System.out.println(y_point);
         //System.out.println(x_par);
         //System.out.println(y_par);
-        int[] x = {w/2-10+x_point+x_vect, w/2+10+x_point+x_vect,w/2+10+x_point+y_vect,w/2-10+x_point-y_vect};
-        int[] y = {h/2-10-y_point-y_vect, h/2-10-y_point-y_vect, h/2+10-y_point+x_vect, h/2+10-y_point-x_vect};
+        int[] x = {w/2+x_point+x_vect, w/2+x_point+x_vect,w/2+x_point+y_vect,w/2+x_point-y_vect};
+        int[] y = {h/2-y_point-y_vect, h/2-y_point-y_vect, h/2-y_point+x_vect, h/2-y_point-x_vect};
 		g2d.fillPolygon(x, y, 4);
 		alcom = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f);
         g2d.setComposite(alcom);
