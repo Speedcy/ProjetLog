@@ -72,7 +72,7 @@ public class Simulateur {
 		for (int i = 0; i < n; i++) {
 			Particule p_i = listeparticules.get(i);
 			//System.out.println(" Boucle 1 p_i = "+p_i);
-			//System.out.println("accy de la particule = "+i+accelerationy.get(i));
+			System.out.println("accy de la particule = "+i+accelerationy.get(i));
 			Vector<Double> previousposition = new Vector<Double>(2);
 			previousposition = p_i.getPosition();
 			Vector<Double> previousvitesse = new Vector<Double>(2);
@@ -98,7 +98,7 @@ public class Simulateur {
 				Vector<Double> acc = new Vector<Double>(4);
 				acc = p_i.calculAcceleration(p_j); // calcul des accélérations intermédiaires entre les particules i et j
 				//System.out.println("");
-				//System.out.println(acc);
+				System.out.println(acc);
 				accelerationx.set(i,accelerationx.get(i)+acc.get(0)); // On ajoute l'accélération de la particule i par rapport à la particule j
 				accelerationy.set(i,accelerationy.get(i)+acc.get(1));
 				accelerationx.set(j,accelerationx.get(j)+acc.get(2)); 

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import Physique.TaskForPC;
+import Plague.Config2;
+import Plague.Monde;
 import Physique.Config;
 import Physique.ChampGravite;
 import Physique.ParticuleChargee;
@@ -24,10 +25,18 @@ public class Main {
 		double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
 				
-		Config config = new Config(50, 500, 500);
-		config.ajoutParticules(10, charge, masse); // ajout de particules à vitesse initiale nulle et de signes alétoires
+
+		Config2 config = new Config2(50, 500, 500);
+		config.ajoutePersonne(10); // ajout de particules ï¿½ vitesse initiale nulle et de signes alï¿½toires
+		Forme formetout=new FormeTout();
+		Monde monde=new Monde();
+		config.getSimulateur().addMilieu(monde);
+
+/*		Config config = new Config(50, 500, 500);
+		config.ajoutParticules(10, charge, masse); // ajout de particules ï¿½ vitesse initiale nulle et de signes alï¿½toires
 		
 		config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);
+*/
 		
 		/*Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0);
@@ -115,11 +124,13 @@ public class Main {
 
 		
 		//Simulateur simulateur = new Simulateur(t_step); 
+
 		config.getSimulateur().addMilieu(cg);
 		config.getSimulateur().addMilieu(cg2);
 		config.getSimulateur().addMilieu(cg3);
 		config.getSimulateur().addMilieu(cg4);
 		*/
+
 
 		
 		/*
@@ -176,7 +187,7 @@ public class Main {
 		 //Milieu milieu= new Milieu();
 		 
 		 
-		// Création Particule, Milieu, Simulateur
+		// Crï¿½ation Particule, Milieu, Simulateur
 
 		/*
 		 * Simulateur simulateur = new Simulateur(); Vector<Double> position =new
