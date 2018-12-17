@@ -8,9 +8,10 @@ import Interface.Milieu;
 import Interface.Particule;
 
 public class Monde extends Milieu {
-	private Forme forme;
-	public Monde() {
-		Forme forme=new FormeTout();
+	
+	public Monde(Forme forme) {
+		super(forme);
+		
 		
 		// TODO Auto-generated constructor stub
 	}

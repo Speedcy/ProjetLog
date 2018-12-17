@@ -1,5 +1,7 @@
 package Interface;
 
+import java.awt.Graphics2D;
+
 public class FormeTout extends Forme {
 
 	public FormeTout() {
@@ -8,6 +10,9 @@ public class FormeTout extends Forme {
 	}
 	public boolean estDedans(Particule p) {
 		return true;
+	}
+public void draw(Graphics2D g2d,int w, int h){
+		
 	}
 
 }

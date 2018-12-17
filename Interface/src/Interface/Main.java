@@ -27,9 +27,9 @@ public class Main {
 				
 
 		Config2 config = new Config2(50, 500, 500);
-		config.ajoutePersonne(10); // ajout de particules � vitesse initiale nulle et de signes al�toires
+		config.ajoutePersonne(20); // ajout de particules � vitesse initiale nulle et de signes al�toires
 		Forme formetout=new FormeTout();
-		Monde monde=new Monde();
+		Monde monde=new Monde(formetout);
 		config.getSimulateur().addMilieu(monde);
 
 /*		Config config = new Config(50, 500, 500);

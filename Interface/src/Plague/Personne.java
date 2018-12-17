@@ -9,6 +9,7 @@ import Physique.ParticuleChargee;
 
 public class Personne extends Particule {
 	private boolean sante;
+	private double peur=0.1;
 
 	public Personne(Vector<Double> p, Vector<Double> v, boolean sante) {
 		super(p, v);
@@ -45,7 +46,13 @@ public class Personne extends Particule {
 				vecr.addElement(0.0);
 				vecr.addElement(0.0);
 				Vector<Double> res ;
-				res=Calculateur.multDblVec(Math.pow(Calculateur.distance(this, p), -2),Calculateur.dif(p.getPosition(),this.getPosition()) );
+				double dis;
+				dis=Calculateur.distance(this, p);
+				if(dis<10) {
+					((Personne)p).setSante(false);
+					p.setColor(Color.red);
+				}
+				res=Calculateur.multDblVec(peur*Math.pow(Calculateur.distance(this, p), -2),Calculateur.dif(p.getPosition(),this.getPosition()) );
 				vecr.addElement(res.get(0));
 				vecr.addElement(res.get(1));
 			}
@@ -61,7 +68,7 @@ public class Personne extends Particule {
 					this.setColor(Color.red);
 				}
 				
-				res=Calculateur.multDblVec(Math.pow(Calculateur.distance(this, p), -2),Calculateur.dif(this.getPosition(),p.getPosition()) );
+				res=Calculateur.multDblVec(peur*Math.pow(dis, -2),Calculateur.dif(this.getPosition(),p.getPosition()) );
 				vecr.addElement(res.get(0));
 				vecr.addElement(res.get(1));
 				vecr.addElement(0.0);
