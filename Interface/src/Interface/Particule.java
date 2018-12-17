@@ -9,11 +9,23 @@ import Physique.ParticuleChargee;
 public class Particule {
 	private Vector<Double> position;
 	private Vector<Double>	vitesse;
+	private Vector<Double> vitessepre;
 	private Color color = Color.blue;
 	
 	public Particule(Vector<Double> p, Vector<Double> v){
 		position=p;
 		vitesse=v;
+		vitessepre=new Vector<Double>(2);
+		vitessepre.add(0.0);
+		vitessepre.add(0.0);
+	}
+
+	public Vector<Double> getVitessepre() {
+		return vitessepre;
+	}
+
+	public void setVitessepre(Vector<Double> vitessepre) {
+		this.vitessepre = vitessepre;
 	}
 
 	public Color getColor() {

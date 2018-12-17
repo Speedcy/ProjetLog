@@ -75,10 +75,10 @@ public class Simulateur {
 			System.out.println("accy de la particule = "+i+accelerationy.get(i));
 			Vector<Double> previousposition = new Vector<Double>(2);
 			previousposition = p_i.getPosition();
-			Vector<Double> previousvitesse = new Vector<Double>(2);
-			previousvitesse = p_i.getVitesse();
-			double newpositionx = previousposition.get(0) + previousvitesse.get(0)*t_step/100;
-			double newpositiony = previousposition.get(1) + previousvitesse.get(1)*t_step/100;
+			//Vector<Double> previousvitesse = new Vector<Double>(2);
+			p_i.setVitessepre( p_i.getVitesse()); 
+			double newpositionx = previousposition.get(0) + p_i.getVitessepre().get(0)*t_step/100;
+			double newpositiony = previousposition.get(1) + p_i.getVitessepre().get(1)*t_step/100;
 			//System.out.println("vitesse en + " + previousvitesse.get(1)*t_step/100 );
 			Vector<Double> newposition = new Vector<Double>(2);
 			newposition.add(newpositionx);
@@ -107,8 +107,8 @@ public class Simulateur {
 				//System.out.println("accelerationy " +i+j+" = "+accelerationy);
 			}
 			
-			double newvitessex = previousvitesse.get(0) + accelerationx.get(i)*t_step/100;
-			double newvitessey = previousvitesse.get(1) + accelerationy.get(i)*t_step/100;
+			double newvitessex = p_i.getVitessepre().get(0) + accelerationx.get(i)*t_step/100;
+			double newvitessey = p_i.getVitessepre().get(1) + accelerationy.get(i)*t_step/100;
 			
 			Vector<Double> newvitesse = new Vector<Double>(2);
 			newvitesse.add(newvitessex);
