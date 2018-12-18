@@ -25,14 +25,13 @@ public class Personne extends Particule {
 		this.sante = sante;
 	}
 	public Vector<Double> calculAcceleration(Particule p) {
-		boolean sante2;
+		boolean sante2 = true;
 		try {
 			sante2 = ((Personne) p).isSante();
 			
 		} catch (Exception e) {
 			System.out.println("Particules de types différents : intérraction non prise en charge");
 		}
-		sante2 = ((Personne) p).isSante();
 		Vector<Double> vecr=new Vector<Double>(4);
 		if (sante2) {
 			if (this.sante) {
@@ -42,7 +41,6 @@ public class Personne extends Particule {
 				vecr.add(0.0);
 			}
 			else {
-				System.out.println("coucou");
 				vecr.addElement(0.0);
 				vecr.addElement(0.0);
 				Vector<Double> res ;

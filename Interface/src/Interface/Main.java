@@ -27,10 +27,12 @@ public class Main {
 				
 
 		Config2 config = new Config2(50, 500, 500);
-		config.ajoutePersonne(20); // ajout de particules � vitesse initiale nulle et de signes al�toires
+		config.ajouteDocteurs(3);
+		config.ajoutePersonne(200); // ajout de particules � vitesse initiale nulle et de signes al�toires
 		Forme formetout=new FormeTout();
 		Monde monde=new Monde(formetout);
 		config.getSimulateur().addMilieu(monde);
+		config.ajouteConfinement(200);
 
 /*		Config config = new Config(50, 500, 500);
 		config.ajoutParticules(10, charge, masse); // ajout de particules � vitesse initiale nulle et de signes al�toires
