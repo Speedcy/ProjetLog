@@ -22,22 +22,21 @@ public class Main {
 		
 		/*double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
-				
-		Config config = new Config(50, 500, 500);
+		
+		Config config = new Config(50, 1000, 500);
+	
 		config.ajoutParticules(10, charge, masse); // ajout de particules � vitesse initiale nulle et de signes al�toires
 		
 		config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);*/
+		
 		
 		// SIMULATION 2 : Plague
 		
 		
 		Config2 config = new Config2(50, 500, 500);
-		config.ajouteDocteurs(3);
-		config.ajoutePersonne(200); // ajout de particules � vitesse initiale nulle et de signes al�toires
-		Forme formetout=new FormeTout();
-		Monde monde=new Monde(formetout);
-		config.getSimulateur().addMilieu(monde);
-		config.ajouteConfinement(200);
+		config.ajouteDocteurs(2);
+		config.ajoutePersonne(50, 0.7); // ajout de particules � vitesse initiale nulle et de signes al�toires
+		config.ajouteConfinement(50);
 
 		// Affichage
 
