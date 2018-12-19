@@ -18,15 +18,13 @@ public class ChampElec extends Milieu {
 	public Vector<Double> calculAcceleration(Particule p) {
 			if(this.getForme().estDedans(p))
 				return Calculateur.multDblVec(((ParticuleChargee) p).getcharge()/((ParticuleChargee) p).getmasse(),E) ;
-			// TODO Auto-generated constructor stub
+
 			Vector<Double> res=new Vector<Double>(2);
 			res.add(0.0);
 			res.add(0.0);
 			return res;
 		}
-		// TODO Auto-generated constructor stub
-		
-		
+			
 	}
 
 

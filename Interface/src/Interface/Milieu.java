@@ -1,11 +1,7 @@
 package Interface;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.Vector;
-
-import Physique.ParticuleChargee;
 
 public class Milieu {
 	private Forme forme;

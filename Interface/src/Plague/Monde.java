@@ -11,9 +11,6 @@ public class Monde extends Milieu {
 	
 	public Monde(Forme forme) {
 		super(forme);
-		
-		
-		// TODO Auto-generated constructor stub
 	}
 
 	public Vector<Double> calculAcceleration(Particule p) {

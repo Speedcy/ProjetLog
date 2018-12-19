@@ -6,7 +6,6 @@ import java.util.Vector;
 import Interface.DemiPlan;
 import Interface.Particule;
 import Interface.Simulateur;
-import Physique.ChampGravite;
 
 public class Config2 {
 	

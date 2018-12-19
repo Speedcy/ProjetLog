@@ -5,7 +5,6 @@ import java.util.Vector;
 
 import Interface.Calculateur;
 import Interface.Particule;
-import Physique.ParticuleChargee;
 
 public class Personne extends Particule {
 	private boolean sante;
@@ -14,7 +13,6 @@ public class Personne extends Particule {
 	public Personne(Vector<Double> p, Vector<Double> v, boolean sante) {
 		super(p, v);
 		this.sante=sante;
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isSante() {

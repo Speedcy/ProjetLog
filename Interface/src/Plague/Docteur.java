@@ -14,7 +14,7 @@ public class Docteur extends Personne{
 	}
 	
 	public Vector<Double> calculAcceleration(Particule p) {
-		System.out.println("Acceleration docteur");
+		//System.out.println("Acceleration docteur");
 		boolean sante2 = true;
 		try {
 			sante2 = ((Personne) p).isSante();
@@ -23,9 +23,7 @@ public class Docteur extends Personne{
 			System.out.println("Particules de types différents : intérraction non prise en charge");
 		}
 		
-		if (sante2)
-			System.out.println("Particule en bonne santé, je n'ai rien à faire");
-		else {
+		if (!sante2) {
 			double dis;
 			dis=Calculateur.distance(this, p);
 			if(dis<30) {
