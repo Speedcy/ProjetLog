@@ -32,14 +32,15 @@ public class Main {
 		
 		// SIMULATION 2 : Plague
 
-		double freqMort=1;
-		Config2 config = new Config2(30, 500, 500);
-		config.ajouteDocteurs(3,0);
-		config.ajoutePersonne(40,freqMort); // ajout de particules � vitesse initiale nulle et de signes al�toires
+		double freqMort=10;
+		double peur=0.05;
+		Config2 config = new Config2(40, 500, 500);
+		config.ajouteDocteurs(3);
+		config.ajoutePersonne(60,freqMort,peur); // ajout de particules � vitesse initiale nulle et de signes al�toires
 		Forme formetout=new FormeTout();
 		Monde monde=new Monde(formetout);
 		config.getSimulateur().addMilieu(monde);
-		config.ajouteConfinement(200);
+		config.ajouteConfinement(50);
 
 		
 		

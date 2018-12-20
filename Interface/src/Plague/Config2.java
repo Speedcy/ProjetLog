@@ -27,7 +27,7 @@ public class Config2 {
 	}
 		
 
-	public void ajoutePersonne(int nbparticules,double pk) {
+	public void ajoutePersonne(int nbparticules,double pk,double peur) {
 
 
 		// Particules de vitesse nulle
@@ -48,7 +48,7 @@ public class Config2 {
 			}
 
 			Personne p1 = new Personne(position, vitesse, sante,pk/100000);
-
+			p1.setPeur(peur);
 			if (!sante) {
 				p1.setColor(Color.red);
 			}
@@ -60,7 +60,7 @@ public class Config2 {
 		}
 	
 
-	public void ajouteDocteurs(int nbDocteurs,double pk) {
+	public void ajouteDocteurs(int nbDocteurs) {
 
 		Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
@@ -70,7 +70,7 @@ public class Config2 {
 			Vector<Double> position = new Vector<Double>(2);
 			position.add(Math.random()*taillefenetrex/5-taillefenetrex/10);
 			position.add(Math.random()*taillefenetrey/5-taillefenetrey/10);
-			Docteur d = new Docteur(position, vitesse,pk);
+			Docteur d = new Docteur(position, vitesse,0.0);
 			simulateur.addParticule(d);
 		}
 	}

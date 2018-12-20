@@ -8,7 +8,7 @@ import Interface.Particule;
 
 public class Personne extends Particule {
 	private boolean sante;
-	private double peur=0.1;
+	private double peur;
 	public boolean kill;
 	private double pk;
 
@@ -17,6 +17,7 @@ public class Personne extends Particule {
 		this.sante=sante;
 		kill=false;
 		this.pk=pk;
+		this.peur=0.1;
 	}
 
 	public boolean isSante() {
@@ -40,7 +41,7 @@ public class Personne extends Particule {
 		}
 		if (!(( ((Personne)p).isSante()))) {
 			if (Math.random()<pk) {
-				this.setKill(true);
+				((Personne)p).setKill(true);
 				//System.out.println(this.kill);
 			}
 		}
