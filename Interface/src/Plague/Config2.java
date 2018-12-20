@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.util.Vector;
 
 import Interface.DemiPlan;
+import Interface.Forme;
+import Interface.FormeTout;
 import Interface.Particule;
 import Interface.Simulateur;
 
@@ -19,11 +21,15 @@ public class Config2 {
 		this.taillefenetrex = taillefenetrex;
 		this.taillefenetrey = taillefenetrey;
 		this.simulateur = new Simulateur(t_step);
+		Forme formetout=new FormeTout();
+		Monde monde=new Monde(formetout);
+		this.simulateur.addMilieu(monde);
 	}
-	
-	
 		
+
 	public void ajoutePersonne(int nbparticules,double pk) {
+
+
 		// Particules de vitesse nulle
 		Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
@@ -40,7 +46,9 @@ public class Config2 {
 			else {
 				sante=false;
 			}
+
 			Personne p1 = new Personne(position, vitesse, sante,pk/100000);
+
 			if (!sante) {
 				p1.setColor(Color.red);
 			}
@@ -51,7 +59,9 @@ public class Config2 {
 			}
 		}
 	
+
 	public void ajouteDocteurs(int nbDocteurs,double pk) {
+
 		Vector<Double> vitesse = new Vector<Double>(2); 
 		vitesse.add(0.0); 
 		vitesse.add(0.0);

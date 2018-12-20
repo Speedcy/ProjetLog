@@ -18,18 +18,20 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// SIMULATION 1 : Particules Chargées
+		// SIMULATION 1 : Particules Chargï¿½es
 		
 		/*double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
-				
-		Config config = new Config(50, 500, 500);
+		
+		Config config = new Config(50, 1000, 500);
+	
 		config.ajoutParticules(10, charge, masse); // ajout de particules ï¿½ vitesse initiale nulle et de signes alï¿½toires
 		
 		config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);*/
 		
-		// SIMULATION 2 : Plague
 		
+		// SIMULATION 2 : Plague
+
 		double freqMort=1;
 		Config2 config = new Config2(30, 500, 500);
 		config.ajouteDocteurs(3,0);
@@ -39,6 +41,8 @@ public class Main {
 		config.getSimulateur().addMilieu(monde);
 		config.ajouteConfinement(200);
 
+		
+		
 		// Affichage
 
 		

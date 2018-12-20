@@ -23,6 +23,10 @@ public class Personne extends Particule {
 		return sante;
 	}
 
+	public void setPeur(double peur) {
+		this.peur = peur;
+	}
+
 	public void setSante(boolean sante) {
 		this.sante = sante;
 	}
