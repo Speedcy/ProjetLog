@@ -118,6 +118,18 @@ public class Simulateur {
 			
 			p_i.setVitesse(newvitesse); // MISE A JOUR DE LA VITESSE
 		}
+		Vector<Particule> listeSup= new Vector<Particule>();
+	for (int i = 0; i < n; i++) {
+		Particule p_i = listeparticules.get(i);
+		System.out.println("kill?"+p_i.kill);
+		if (p_i.kill){
+			listeSup.add(p_i);
+		}
+	}
+	for(Particule a:listeSup)	{
+		listeparticules.remove(a);
+	}
+	}
 	}
 
-}
+

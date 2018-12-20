@@ -9,13 +9,23 @@ public class Particule {
 	private Vector<Double>	vitesse;
 	private Vector<Double> vitessepre;
 	private Color color = Color.blue;
+	public boolean kill;
 	
+	public boolean isKill() {
+		return kill;
+	}
+
+	public void setKill(boolean kill) {
+		this.kill = kill;
+	}
+
 	public Particule(Vector<Double> p, Vector<Double> v){
 		position=p;
 		vitesse=v;
 		vitessepre=new Vector<Double>(2);
 		vitessepre.add(0.0);
 		vitessepre.add(0.0);
+		kill=false;
 	}
 
 	public Vector<Double> getVitessepre() {

@@ -9,10 +9,14 @@ import Interface.Particule;
 public class Personne extends Particule {
 	private boolean sante;
 	private double peur=0.1;
+	public boolean kill;
+	private double pk;
 
-	public Personne(Vector<Double> p, Vector<Double> v, boolean sante) {
+	public Personne(Vector<Double> p, Vector<Double> v, boolean sante,double pk) {
 		super(p, v);
 		this.sante=sante;
+		kill=false;
+		this.pk=pk;
 	}
 
 	public boolean isSante() {
@@ -24,6 +28,18 @@ public class Personne extends Particule {
 	}
 	public Vector<Double> calculAcceleration(Particule p) {
 		boolean sante2 = true;
+		if (!(this.sante)) {
+			if (Math.random()<pk) {
+				this.setKill(true);
+				//System.out.println(this.kill);
+			}
+		}
+		if (!(( ((Personne)p).isSante()))) {
+			if (Math.random()<pk) {
+				this.setKill(true);
+				//System.out.println(this.kill);
+			}
+		}
 		try {
 			sante2 = ((Personne) p).isSante();
 			

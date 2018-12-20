@@ -8,8 +8,8 @@ import Interface.Particule;
 
 public class Docteur extends Personne{
 	
-	public Docteur(Vector<Double> p, Vector<Double> v) {
-		super(p, v, true);
+	public Docteur(Vector<Double> p, Vector<Double> v,double pk) {
+		super(p, v, true,pk);
 		this.setColor(Color.CYAN);
 	}
 	
