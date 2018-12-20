@@ -22,9 +22,10 @@ public class Main {
 		/*
 		int t_step = 50;
 		int x_fenetre = 500;
+
 		int y_fenetre = 500;
 		
-		int nbParticules = 2;
+		int nbParticules = 10;
 		double masse = 9.1*Math.pow(10, -31);
 		double charge = -1.6*Math.pow(10,-19);
 		
@@ -32,8 +33,9 @@ public class Main {
 	
 		config.ajoutParticules(nbParticules, charge, masse); // ajout de particules � vitesse initiale nulle et de signes al�toires
 		
+		//config.ajoutChampGravite(0., 200., 0., -1., 0., -1.);
+		
 		//config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);
-		*/
 		
 		// SIMULATION 2 : Plague
 
