@@ -9,7 +9,7 @@ import Interface.Particule;
 public class Personne extends Particule {
 	private boolean sante;
 	private double peur;
-	private boolean kill;
+	public boolean kill;
 	private double pk;
 
 	public Personne(Vector<Double> p, Vector<Double> v, boolean sante,double pk) {
@@ -54,7 +54,7 @@ public class Personne extends Particule {
 		if (!(( ((Personne)p).isSante()))) {
 			if (Math.random()<pk) {
 				((Personne)p).setKill(true);
-				//System.out.println(this.kill);
+				System.out.println(this.kill);
 			}
 		}
 		try {
