@@ -9,7 +9,7 @@ import Interface.Particule;
 public class Personne extends Particule {
 	private boolean sante;
 	private double peur;
-	public boolean kill;
+	private boolean kill;
 	private double pk;
 
 	public Personne(Vector<Double> p, Vector<Double> v, boolean sante,double pk) {
@@ -19,6 +19,18 @@ public class Personne extends Particule {
 		this.pk=pk;
 		this.peur=0.1;
 	}
+
+	public boolean isKill() {
+		return kill;
+	}
+
+
+
+	public void setKill(boolean kill) {
+		this.kill = kill;
+	}
+
+
 
 	public boolean isSante() {
 		return sante;
