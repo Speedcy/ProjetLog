@@ -54,7 +54,6 @@ public class Personne extends Particule {
 		if (!(( ((Personne)p).isSante()))) {
 			if (Math.random()<pk) {
 				((Personne)p).setKill(true);
-				System.out.println(this.kill);
 			}
 		}
 		try {

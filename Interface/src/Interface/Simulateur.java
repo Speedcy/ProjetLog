@@ -124,7 +124,6 @@ public class Simulateur {
 		//System.out.println("kill?"+p_i.kill);
 		if (p_i.isKill()){
 			listeSup.add(p_i);
-			System.out.println("Un?");
 		}
 	}
 	for(Particule a:listeSup)	{

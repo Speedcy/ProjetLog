@@ -19,8 +19,8 @@ public class Main {
 	public static void main(String[] args) {
 
 		// SIMULATION 1 : Particules Charg�es
-		/*
-		int t_step = 50;
+		
+		/*int t_step = 50;
 		int x_fenetre = 500;
 
 		int y_fenetre = 500;
@@ -35,7 +35,7 @@ public class Main {
 		
 		//config.ajoutChampGravite(0., 200., 0., -1., 0., -1.);
 		
-		//config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);
+		//config.ajoutChampElec(200., 0., 1., 0., -0.000000000005, 0.);*/
 		
 		// SIMULATION 2 : Plague
 
@@ -45,7 +45,7 @@ public class Main {
 		
 		double freqMort=10;
 		double peur=0.5;
-		int nbDocteurs = 3;
+		int nbDocteurs = 1;
 		int nbPersonnes = 50;
 		int tailleConfinement = 50;
 		
